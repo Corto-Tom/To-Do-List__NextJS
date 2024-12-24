@@ -4,15 +4,14 @@ For this project:
 
     -npm i
     -npm run dev 
-    -acceder à l'application dans le port 3000
+    -acces by port 3000 on localhost
     
 ## Description
 
-Cette application est une liste de tâches interactive construite avec **Next.js**. Elle permet de :
-- Ajouter des tâches avec un titre et une description.
-- Afficher une liste de tâches.
-- Supprimer des tâches.
-
+- This application is an interactive task list built with Next.js. It allows users to:
+  - Add tasks with a title and description.
+  - Display a list of tasks.
+  - Delete tasks.
 
 
 ## Project Structure :
@@ -40,14 +39,6 @@ Cette application est une liste de tâches interactive construite avec **Next.js
 - **SQLite**: A database for storing tasks.
 - **TypeScript**: A superset of JavaScript for improved code safety and readability.
 - **Tailwind CSS**: A CSS framework for quick and efficient styling.
-
-## File Structure
-
-- `db.ts`: Manages the connection to the SQLite database.
-- `types/types.ts`: Defines TypeScript types for the data being handled.
-- `TaskList.tsx`: React component for displaying and managing the task list.
-
-## API Explanation
 
 ### GET `/api/routes`
 
