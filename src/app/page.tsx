@@ -3,7 +3,7 @@ import Link from "next/link";
 import TaskList from "@/component/TaskList";
 
 async function fetchTasks(): Promise<Task[]> {
-  const res = await fetch("http://localhost:3008/api/routes", { // API call for the wanted route function
+  const res = await fetch("http://localhost:3000/api/routes", { // API call for the wanted route function
     method: "GET", // Explicite which method is used
     cache: "no-store", // Garantit que les données ne sont pas mises en cache
   });

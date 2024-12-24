@@ -8,7 +8,7 @@ export default function TaskList({ tasks }: { tasks: Task[] }) {
 
   async function deleteTask(id: number) {
     try {
-      const res = await fetch(`http://localhost:3008/api/routes?id=${id}`, {
+      const res = await fetch(`http://localhost:3000/api/routes?id=${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {

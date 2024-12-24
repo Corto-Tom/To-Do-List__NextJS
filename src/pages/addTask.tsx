@@ -8,7 +8,7 @@ export default function BlogPage() {
 
     async function handleSubmit() {
         try {
-            const response = await fetch('http://localhost:3008/api/routes', { // API call for the wanted route function
+            const response = await fetch('http://localhost:3000/api/routes', { // API call for the wanted route function
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title, description }), // Body of the request, data to push in the database
