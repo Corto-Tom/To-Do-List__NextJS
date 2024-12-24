@@ -1,0 +1,77 @@
+For this project:
+
+## Initialisation:
+
+    -npm i
+    -npm run dev 
+    -acceder à l'application dans le port 3000
+    
+## Description
+
+Cette application est une liste de tâches interactive construite avec **Next.js**. Elle permet de :
+- Ajouter des tâches avec un titre et une description.
+- Afficher une liste de tâches.
+- Supprimer des tâches.
+
+
+
+## Project Structure :
+├── db_sql/
+│   └── db.sqlite         # Base de données SQLite
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx    # Layout global
+│   │   ├── page.tsx      # Page principale affichant la liste des tâches
+│   │   ├── global.css    # Styles globaux
+│   │   ├── api/
+│   │   │   └── routes/
+│   │   │       └── route.ts # API pour les opérations GET et POST
+│   ├── pages/
+│   │   └── addTask.tsx   # Page pour ajouter une nouvelle tâche
+│   ├── component/
+│   │   └── TaskList.tsx  # Composant pour afficher et gérer la liste des tâches
+│   ├── types/
+│   │   └── types.ts      # Types TypeScript pour les données
+│   └── db.ts             # Connexion à la base de données
+
+## Technical Stack
+
+- **Next.js**: A React framework for page management and server-side rendering.
+- **SQLite**: A database for storing tasks.
+- **TypeScript**: A superset of JavaScript for improved code safety and readability.
+- **Tailwind CSS**: A CSS framework for quick and efficient styling.
+
+## File Structure
+
+- `db.ts`: Manages the connection to the SQLite database.
+- `types/types.ts`: Defines TypeScript types for the data being handled.
+- `TaskList.tsx`: React component for displaying and managing the task list.
+
+## API Explanation
+
+### GET `/api/routes`
+
+- Uses `openDB()` to connect to the SQLite database.
+- Retrieves tasks via the SQL query `SELECT * FROM tasks`.
+
+### POST `/api/routes`
+
+- Parses the request body to extract `title` and `description`.
+- Inserts a new task into the database using the SQL query `INSERT INTO`.
+
+### DELETE `/api/routes`
+
+- Deletes a specific task using the ID provided as a parameter.
+- SQL query: `DELETE FROM tasks WHERE id = ?`.
+
+## Database Configuration
+
+### File: `db_sql/db.sqlite`
+
+- Table `tasks`:
+  ```sql
+  CREATE TABLE tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL
+  );
